@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F7F3EC">
+<title>Privacy Policy — Medical Casebook</title>
+<meta name="description" content="Medical Casebook's privacy policy, in plain English: no data collected, no developer servers, no accounts or analytics. Your casebook stays on your devices and in your own private iCloud database, and recordings are transcribed on-device.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<!-- PLACEHOLDER (site URL): add <link rel="canonical" href="https://YOUR-SITE/privacy.html"> and make og:image absolute. -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Medical Casebook">
+<meta property="og:title" content="Privacy Policy — Medical Casebook">
+<meta property="og:description" content="No data collected, no developer servers, no accounts or analytics. Your casebook stays on your devices and in your own private iCloud.">
+<meta property="og:image" content="icon.png">
+<meta property="og:image:alt" content="The Medical Casebook app icon">
+<meta name="twitter:card" content="summary">
+<style>
+  /* Paper design system — tokens from the app's PaperTheme. Light only, as the app is. */
+  :root {
+    color-scheme: only light;
+    --paper: #F7F3EC; --paper-bright: #FDFBF6; --paper-warm: #F1EBDF; --bar: #FBF7EF;
+    --ink: #211D17; --headline: #2B2317; --body: #41392C; --secondary: #5C5240;
+    --muted: #6E6350;  /* app's muted (#877C67) darkened to pass WCAG AA on small text */
+    --faint: #A3977F;  /* decoration only */
+    --hairline: #E4DDD0; --border: #D8CFBE; --rail-border: #E5DCC9; --card-border: #E2D7BF;
+    --rust: #A3532F; --rust-deep: #8A4526; --badge-bg: #F6E1D5;
+    --chip: #EFE6D6; --track: #EEE7DA; --hover: #EAE2CF; --study: #F3EAD9; --study-border: #E0C9A6;
+    --serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --shadow-soft: 0 1px 2px rgba(60,45,20,0.05);
+    --gutter: 24px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { font-family: var(--sans); color: var(--body); background: var(--paper); -webkit-font-smoothing: antialiased; line-height: 1.6; font-size: 16px; overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--rust); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--rust-deep); }
+  :focus-visible { outline: 2px solid var(--rust-deep); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper-bright); padding: 10px 16px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+  .skip:focus { top: 12px; color: var(--paper-bright); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+  [id] { scroll-margin-top: 76px; }
+  .overline { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .overline.rust { color: var(--rust); }
+  h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 600; }
+
+  /* Header */
+  .site-head { position: sticky; top: 0; z-index: 60; background: rgba(247,243,236,0.92); -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--hairline); }
+  .nav-inner { display: flex; align-items: center; gap: 16px; min-height: 58px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 16px; white-space: nowrap; text-decoration: none; }
+  .brand:hover { color: var(--ink); }
+  .glyph { width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0; box-shadow: var(--shadow-soft); }
+  .nav-inner > nav { margin-left: auto; }
+  .nav-links { display: flex; gap: 4px; list-style: none; }
+  .nav-links a { display: block; color: var(--secondary); text-decoration: none; font-size: 14px; font-weight: 500; padding: 7px 12px; border-radius: 999px; }
+  .nav-links a:hover { background: var(--hover); color: var(--ink); }
+  .nav-links a[aria-current="page"] { background: var(--chip); color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--rust); }
+
+  /* Footer */
+  .site-foot { border-top: 1px solid var(--hairline); background: var(--paper-warm); }
+  .foot-inner { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: flex-start; justify-content: space-between; padding-top: 30px; padding-bottom: 34px; }
+  .foot-brand { display: flex; gap: 12px; align-items: center; }
+  .foot-brand .glyph { width: 26px; height: 26px; }
+  .foot-brand p { font-size: 14px; color: var(--secondary); }
+  .foot-brand .copy { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--muted); }
+  .foot-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+  .foot-nav a { color: var(--secondary); }
+  .foot-nav a:hover { color: var(--rust-deep); }
+  .foot-mail { overflow-wrap: anywhere; }
+
+  /* Document */
+  .doc { max-width: 780px; margin: 0 auto; padding: 56px var(--gutter) 72px; }
+  .doc h1 { font-size: clamp(34px, 6vw, 50px); line-height: 1.06; letter-spacing: -0.012em; margin-top: 10px; }
+  .stamp { margin-top: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .doc h2 { font-size: clamp(23px, 3.4vw, 28px); line-height: 1.2; margin: 46px 0 12px; padding-top: 22px; border-top: 1px solid var(--hairline); }
+  .doc h2 .num { font-family: var(--mono); font-size: 12px; color: var(--rust); letter-spacing: 0.1em; display: block; margin-bottom: 4px; font-weight: 600; }
+  .doc h3 { font-size: 19px; margin: 24px 0 6px; }
+  .doc p { margin-top: 12px; }
+  .doc p:first-child { margin-top: 0; }
+  .doc ul.list { list-style: none; margin-top: 12px; }
+  .doc ul.list > li { position: relative; padding: 9px 0 9px 26px; border-top: 1px solid var(--hairline); }
+  .doc ul.list > li:first-child { border-top: 0; }
+  .doc ul.list > li::before { content: "\2014"; content: "\2014" / ""; position: absolute; left: 0; color: var(--rust); font-family: var(--mono); font-size: 12px; top: 11px; }
+  .doc b, .doc strong { color: var(--ink); font-weight: 600; }
+  .doc code { font-family: var(--mono); font-size: 0.86em; background: var(--chip); border-radius: 5px; padding: 1px 6px; overflow-wrap: anywhere; }
+
+  .callout { margin-top: 28px; background: var(--paper-bright); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px 24px; }
+  .callout .overline { margin-bottom: 8px; color: var(--rust); }
+  .callout p { margin-top: 10px; font-size: 16.5px; }
+  .callout.warn { background: var(--study); border-color: var(--study-border); }
+
+  .toc { margin-top: 28px; background: var(--paper-warm); border: 1px solid var(--hairline); border-radius: 14px; padding: 18px 22px; }
+  .toc ol { margin-top: 10px; columns: 2; column-gap: 28px; list-style: none; counter-reset: t; }
+  .toc li { counter-increment: t; break-inside: avoid; padding: 3px 0; font-size: 15px; }
+  .toc li::before { content: counter(t, decimal-leading-zero); font-family: var(--mono); font-size: 11px; color: var(--muted); margin-right: 10px; }
+  .toc a { color: var(--secondary); text-decoration: none; }
+  .toc a:hover { color: var(--rust-deep); text-decoration: underline; }
+
+  .conns { list-style: none; margin-top: 16px; display: grid; gap: 12px; }
+  .conn { background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 12px; padding: 14px 18px 16px; }
+  .conn .who { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+  .conn .host { font-family: var(--mono); font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+  .conn dl { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 4px 14px; margin-top: 10px; font-size: 15px; }
+  .conn dt { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust-deep); padding-top: 4px; }
+  .conn dd { color: var(--body); }
+
+  @media (max-width: 640px) {
+    :root { --gutter: 16px; }
+    .doc { padding-top: 40px; }
+    .toc ol { columns: 1; }
+    .conn dl { grid-template-columns: minmax(0, 1fr); }
+    .conn dt { padding-top: 6px; }
+    .nav-links a { padding: 7px 9px; font-size: 13.5px; }
+  }
+  @media (max-width: 420px) {
+    .brand .bn { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .nav-links { gap: 2px; }
+  }
+  @media print {
+    .site-head, .skip, .toc { display: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img class="glyph" src="icon.png" alt="" width="30" height="30">
+      <span class="bn">Medical Casebook</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <p class="overline">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="stamp">Effective October 23, 2026</p>
+  <!-- PLACEHOLDER (developer identity): consider naming the seller exactly as the App Store shows it,
+       e.g. "Medical Casebook is made by [seller name] (“we”, “the developer”)", and using that name
+       in the footer copyright line on all three pages. -->
+  <p style="margin-top:18px">Medical Casebook is made by an independent developer (&ldquo;we&rdquo; or &ldquo;the developer&rdquo; in this policy). This policy explains what the app does with your information. You can reach us at <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20privacy%20question">proceduralist@proceduralist.io</a>.</p>
+
+  <section class="callout" aria-labelledby="summary">
+    <h2 id="summary" class="overline" style="margin:0;padding:0;border:0;font-size:11.5px;font-family:var(--mono)">The short version</h2>
+    <p>Medical Casebook does not collect your data. The developer runs no servers, and the app has no accounts, no analytics, no advertising and no tracking.</p>
+    <p>What you create stays on your devices and, if you use iCloud, in your own private iCloud database, which the developer cannot access. Recordings are transcribed on your device, and the audio is never saved.</p>
+    <p>The app goes online only for iCloud sync, for source lookups you ask for, to download its speech model if you turn on Recording, and — when your device can't recognize speech on its own — to use Apple's speech recognition when you dictate a topic.</p>
+  </section>
+
+  <nav class="toc" aria-label="On this page">
+    <p class="overline">On this page</p>
+    <ol role="list">
+      <li><a href="#collect">What we collect</a></li>
+      <li><a href="#storage">Where your data lives</a></li>
+      <li><a href="#on-device">On-device processing</a></li>
+      <li><a href="#network">Network connections</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#third-parties">Third parties</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#choices">Your choices and deleting data</a></li>
+      <li><a href="#medical">Medical information</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="collect"><span class="num" aria-hidden="true">01</span> What we collect</h2>
+  <p><b>Nothing.</b> The app sends nothing to the developer. There is no developer server, no account or sign-in, and no analytics, crash-reporting or advertising code in the app. We never learn your name, your email address or anything you write in the app.</p>
+  <!-- Confirm the label in App Store Connect (App Privacy) still reads "Data Not Collected". -->
+  <p>The app's App Store privacy label is <b>Data Not Collected</b>. Its privacy manifest declares no tracking, no tracking domains and no collected data types.</p>
+  <!-- If the Mac's duplicate-note repair diagnostics are changed to log note text and titles as private
+       (redacted), the last sentence of this paragraph can be replaced with: "It marks your notes and
+       transcripts as private, so the system redacts them." -->
+  <p>Like most apps, Medical Casebook writes diagnostic messages to your device's system log, which your operating system manages. The app never sends the log anywhere. On the Mac, when the app repairs duplicate copies of a note left behind by iCloud sync, those messages can include the topic's title and short excerpts of the note's text.</p>
+  <p>If you email us, we receive what you send — your email address and your message — and use it to reply to you.</p>
+
+  <h2 id="storage"><span class="num" aria-hidden="true">02</span> Where your data lives</h2>
+  <h3>On your device</h3>
+  <p>Your casebook is stored on your device using Apple's SwiftData framework. That includes your topics and groups, tags, Synthesis Notes, sources, images and their annotations, collections, Sticky Notes (including any transcripts in them), Follow Ups, your flashcard study history, and Related Lectures links. Like other app data, it's included in the device backups you make, such as iCloud Backup, a Finder backup or Time Machine.</p>
+  <h3>In your private iCloud database</h3>
+  <p>If you're signed in to iCloud, the app syncs that content between your devices through Apple's CloudKit, using the app's <b>private</b> database in your own iCloud account. The app uses no public or shared iCloud databases. The developer cannot access your private database; your data there is governed by Apple's iCloud terms and privacy policy.</p>
+  <p>The app registers for silent push notifications only so that iCloud can tell it new data is ready to sync. It never shows you notifications.</p>
+  <h3>Other things kept on the device</h3>
+  <ul class="list" role="list">
+    <li><b>Preferences</b>, such as whether Recording is on, your flashcard settings and, on the Mac, the transcript folder you picked, are stored on that device.</li>
+    <li><b>The speech model</b> (about 630&nbsp;MB) is stored in the app's own storage and excluded from device backups.</li>
+    <li><b>Recording recovery files.</b> While you record, transcribed words — text only, never audio — are written to a small file on the device so they aren't lost if the app is interrupted. The file is deleted once its words reach your note. If one is left over, its words are delivered the next time you open the app, and then it is removed.</li>
+    <li><b>Transcript files (Mac, optional).</b> If you turn on <i>Save transcripts to a folder</i>, each recording is saved as a .txt file in the folder you choose, instead of being added to the note. Those are ordinary files in a folder you control.</li>
+    <li><b>Related Lectures (Mac).</b> When you link a lecture deck to a topic, the app stores the file's name, the lecturer, your note and the file's last-known location in your casebook, so they sync like the rest of it. The app never uploads the lecture file itself.</li>
+    <li><b>Temporary and cache files.</b> To share a PDF or an image, the app writes a temporary file for the share sheet. Source lookups (books, articles and web pages) may be cached on the device, and websites you fetch details from may store cookies in the app.</li>
+  </ul>
+
+  <h2 id="on-device"><span class="num" aria-hidden="true">03</span> On-device processing</h2>
+  <h3>Recording into Sticky Notes</h3>
+  <p>Recording uses Whisper (large-v3-turbo), run on your own device by the open-source WhisperKit package. English speech is transcribed verbatim on the device. <b>The audio is held in memory only and is never written to disk</b>, and neither the audio nor the transcript is sent to the developer or to any third party.</p>
+  <p>The transcript goes into the sticky note you recorded in, and is stored and synced like the rest of your casebook. On the Mac you can instead save it to a folder, as described above.</p>
+  <p>There is no language model and no AI summary. An earlier on-device summarizer was removed in October 2026, and the app deletes the files it left behind.</p>
+  <p>Once the speech model and its tokenizer are on your device, recording works offline and normally makes no network requests. If any of those files are missing or damaged, the app downloads them again from Hugging Face. Your audio and transcripts are never sent.</p>
+  <h3>Recording System Audio (Mac)</h3>
+  <p>On the Mac you can record System Audio, for example a Zoom or Teams lecture or a video. macOS controls this through the <i>Screen &amp; System Audio Recording</i> permission. The app keeps only the audio. macOS requires a screen stream to capture audio, so the app asks for the smallest one possible (2&times;2 pixels) and discards it without reading it. Nothing on your screen is saved or sent anywhere. If you record a call or meeting, make sure you have the other participants' permission.</p>
+  <h3>Dictating a topic in Capture</h3>
+  <p>The microphone button in Capture uses Apple's speech recognition. Where your device supports on-device recognition, the audio stays on the device. Where it doesn't, your dictation is sent to Apple to be recognized, under Apple's privacy policy. This happens only while you are dictating.</p>
+
+  <h2 id="network"><span class="num" aria-hidden="true">04</span> Network connections the app makes</h2>
+  <p>All connections are outgoing and encrypted (HTTPS); the app accepts no incoming connections. Like any internet request, each one lets the service see your device's IP address and basic technical details such as a user-agent string, which it handles under its own privacy policy. Apart from your iCloud sync and your own dictation (when Apple processes it), <b>none of these requests contain your notes, your images, your name or any device identifier</b> — only the identifier or address you typed.</p>
+  <ul class="conns">
+    <li class="conn">
+      <div class="who">iCloud</div><div class="host">Apple CloudKit</div>
+      <dl><dt>When</dt><dd>Automatically, while you're signed in to iCloud.</dd><dt>Sends</dt><dd>Your casebook content, to your own private database.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">Crossref, then doi.org</div><div class="host">api.crossref.org &middot; doi.org</div>
+      <dl><dt>When</dt><dd>You look up a journal article by DOI. doi.org is asked only if Crossref doesn't recognize it, and doi.org may pass the request on to the agency that registered the DOI (for example DataCite), which also receives the DOI.</dd><dt>Sends</dt><dd>The DOI.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">PubMed (NCBI)</div><div class="host">eutils.ncbi.nlm.nih.gov</div>
+      <dl><dt>When</dt><dd>You look up an article by PubMed ID.</dd><dt>Sends</dt><dd>The PubMed ID.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">Google Books</div><div class="host">www.googleapis.com</div>
+      <dl><dt>When</dt><dd>You look up a book by ISBN, typed or scanned.</dd><dt>Sends</dt><dd>The ISBN, plus the app's own Google API key and its bundle identifier. These identify the app to Google, not you.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">Open Library</div><div class="host">openlibrary.org</div>
+      <dl><dt>When</dt><dd>As a fallback for book lookups.</dd><dt>Sends</dt><dd>The ISBN.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">The website you entered</div><div class="host">Whatever address you typed, and any site it redirects to</div>
+      <dl><dt>When</dt><dd>You fetch details for a website source.</dd><dt>Sends</dt><dd>An ordinary request for that page, identified as the Safari browser. The app reads only the page's header information, such as its title. As with any web request, that site may set or read its own cookies.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">Hugging Face</div><div class="host">huggingface.co and Hugging Face's download (CDN) servers</div>
+      <dl><dt>When</dt><dd>You turn on Recording or first press Record, at launch if Recording is on but the model is missing (for example after restoring a device), and if an installed model's files turn out to be missing or damaged. On iPhone and iPad that automatic download happens only on Wi-Fi or a similar connection, not over cellular data or in Low Data Mode.</dd><dt>Sends</dt><dd>Requests for the speech model's files (about 630&nbsp;MB) and its tokenizer. No account or sign-in is used.</dd></dl>
+    </li>
+    <li class="conn">
+      <div class="who">Apple speech recognition</div><div class="host">Apple</div>
+      <dl><dt>When</dt><dd>Only when you dictate in Capture on a device that can't recognize speech on its own.</dd><dt>Sends</dt><dd>The audio of your dictation.</dd></dl>
+    </li>
+  </ul>
+  <p>The app doesn't load book cover images, link previews or web pages inside the app. Links you tap in a note or on an image open in your own web browser, under that browser's policies.</p>
+
+  <h2 id="permissions"><span class="num" aria-hidden="true">05</span> Permissions</h2>
+  <p>The app asks for these permissions only for the features listed. You can change them at any time in Settings (iPhone and iPad) or System Settings (Mac), under Privacy &amp; Security.</p>
+  <ul class="list" role="list">
+    <li><b>Microphone</b> — to dictate a topic in Capture, and to record into Sticky Notes.</li>
+    <li><b>Speech Recognition</b> — to turn your dictated topic into text in Capture.</li>
+    <li><b>Camera</b> (iPhone and iPad) — only to scan the ISBN barcode on a book. The scanner reads barcodes only.</li>
+    <li><b>Screen &amp; System Audio Recording</b> (Mac) — only if you choose to record System Audio. Only the audio is used.</li>
+    <li><b>Background audio</b> (iPhone and iPad) — lets a recording continue while the phone is locked.</li>
+    <li><b>Photos and files</b> — you choose images with the system photo picker or file picker, so the app receives only the items you pick and doesn't ask for access to your whole library. On the Mac, the app can reach only the files and folders you choose: images you import or save, lecture decks, PDFs you save and your transcript folder.</li>
+  </ul>
+  <p>The app doesn't ask for your location, contacts or calendars, and it doesn't ask to track you.</p>
+
+  <h2 id="third-parties"><span class="num" aria-hidden="true">06</span> Third parties</h2>
+  <ul class="list" role="list">
+    <li><b>Apple</b> provides iCloud sync and, in the case described above, speech recognition.</li>
+    <li><b>Crossref, doi.org, NCBI PubMed, Google Books, Open Library and Hugging Face</b> receive only the requests listed in section 4, and only when those features are used.</li>
+    <li><b>WhisperKit</b>, the open-source package by Argmax that runs the speech model, is the app's only third-party code package. It runs inside the app. In the version the app ships with, it contains no analytics and contacts only Hugging Face, to download the speech model and its tokenizer.</li>
+    <li>There are no analytics, crash-reporting, advertising or tracking services in the app.</li>
+    <li>We don't sell, rent or share your data, because we don't have it.</li>
+  </ul>
+
+  <h2 id="children"><span class="num" aria-hidden="true">07</span> Children</h2>
+  <p>Medical Casebook is meant for medical professionals and trainees and is not directed at children. It collects no data from anyone, including children.</p>
+
+  <h2 id="choices"><span class="num" aria-hidden="true">08</span> Your choices and deleting your data</h2>
+  <ul class="list" role="list">
+    <li><b>Use it without iCloud.</b> Sync is optional. To keep your casebook out of iCloud sync, turn off iCloud for Casebook in your device's iCloud settings, or sign out of iCloud. Your casebook then stays on that device, and in any device backups you make, such as iCloud Backup, a Finder backup or Time Machine.</li>
+    <li><b>Trash.</b> Deleted topics (and everything in them), Sticky Notes and Follow Ups stay in Trash for 30 days and are then deleted for good. You can Restore them, or remove them sooner with Delete Now or Empty Trash. Images don't go to Trash. On iPhone and iPad, deleting an image asks you to confirm; on the Mac, Delete Image acts immediately. In both cases it can't be undone.</li>
+    <li><b>The speech model.</b> On the Mac, turn off <i>Record in Sticky Notes</i> in Settings &rsaquo; Recording; the app asks you to confirm, then removes the model. On iPhone and iPad, choose <i>Remove from This Device</i> in More &rsaquo; Recording. While Recording is off, the app won't download the model again.</li>
+    <li><b>Transcript files</b> you saved to a folder on the Mac are ordinary files; delete them in Finder.</li>
+    <li><b>Deleting the app.</b> On iPhone and iPad, deleting the app removes its data from that device, including the speech model and any recovery files. On the Mac, deleting the app leaves its data behind. To remove it, also delete the folder <code>~/Library/Containers/com.radiology.Radiology-Casebook</code>, along with any transcript files or PDFs you saved elsewhere.</li>
+    <li><b>Your iCloud copy</b> stays in your iCloud account until you delete it. You can do that in your device's iCloud settings, under the option to manage your iCloud storage.</li>
+  </ul>
+  <p>Because we hold no data about you, there is nothing for us to export or delete on our side — and we can't recover your data for you.</p>
+
+  <h2 id="medical"><span class="num" aria-hidden="true">09</span> Medical information</h2>
+  <div class="callout warn" style="margin-top:14px">
+    <p style="margin-top:0"><b>Medical Casebook is a personal study tool, not a medical record.</b> It's designed for what you learn from articles, textbooks and teaching. It isn't intended for patient care.</p>
+  </div>
+  <ul class="list" role="list">
+    <li><b>Please don't enter information that could identify a patient</b> — names, dates of birth, medical record or accession numbers, addresses, faces, or images with identifying text burned in. Remove identifiers from an image before you import it.</li>
+    <li>Images are stored as you import them, including any metadata embedded in the file, such as when and where a photo was taken. Remove identifying metadata as well as visible identifiers before you import.</li>
+    <li>Record only where you're allowed to. Case conferences often mention patients: don't record sessions where patients are identified, and remove any identifiers that end up in a transcript.</li>
+    <li>The app isn't designed for HIPAA compliance, and the developer doesn't enter into business associate agreements. Your institution's policies may also apply to what you store.</li>
+    <li>Content you sync is stored in your iCloud account under Apple's iCloud terms.</li>
+  </ul>
+
+  <h2 id="changes"><span class="num" aria-hidden="true">10</span> Changes to this policy</h2>
+  <p>If an update changes how the app handles data, we'll update this policy and the app's App Store privacy label, and change the effective date at the top of this page.</p>
+
+  <h2 id="contact"><span class="num" aria-hidden="true">11</span> Contact</h2>
+  <p>Questions about privacy? Email <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20privacy%20question">proceduralist@proceduralist.io</a>. For help with the app, see <a href="support.html">Support</a>.</p>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <img class="glyph" src="icon.png" alt="" width="26" height="26">
+      <div>
+        <p>Medical Casebook</p>
+        <p class="copy">&copy; 2026 Medical Casebook</p>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy Policy</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a class="foot-mail" href="mailto:proceduralist@proceduralist.io">proceduralist@proceduralist.io</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F7F3EC">
+<title>Support — Medical Casebook</title>
+<meta name="description" content="Help for Medical Casebook on Mac, iPhone and iPad: getting started, iCloud sync, recording and the speech model, PDF export, Study flashcards, deleting data, and how to contact the developer.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<!-- PLACEHOLDER (site URL): add <link rel="canonical" href="https://YOUR-SITE/support.html"> and make og:image absolute. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Medical Casebook">
+<meta property="og:title" content="Support — Medical Casebook">
+<meta property="og:description" content="Getting started, sync, recording, PDF export, Study, and how to reach the developer.">
+<meta property="og:image" content="icon.png">
+<meta property="og:image:alt" content="The Medical Casebook app icon">
+<meta name="twitter:card" content="summary">
+<style>
+  /* Paper design system — tokens from the app's PaperTheme. Light only, as the app is. */
+  :root {
+    color-scheme: only light;
+    --paper: #F7F3EC; --paper-bright: #FDFBF6; --paper-warm: #F1EBDF; --bar: #FBF7EF;
+    --ink: #211D17; --headline: #2B2317; --body: #41392C; --secondary: #5C5240;
+    --muted: #6E6350;  /* app's muted (#877C67) darkened to pass WCAG AA on small text */
+    --faint: #A3977F;  /* decoration only */
+    --hairline: #E4DDD0; --border: #D8CFBE; --rail-border: #E5DCC9; --card-border: #E2D7BF;
+    --rust: #A3532F; --rust-deep: #8A4526; --badge-bg: #F6E1D5;
+    --chip: #EFE6D6; --track: #EEE7DA; --hover: #EAE2CF; --study: #F3EAD9; --study-border: #E0C9A6;
+    --serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --shadow-soft: 0 1px 2px rgba(60,45,20,0.05);
+    --gutter: 24px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { font-family: var(--sans); color: var(--body); background: var(--paper); -webkit-font-smoothing: antialiased; line-height: 1.6; font-size: 16px; overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--rust); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--rust-deep); }
+  :focus-visible { outline: 2px solid var(--rust-deep); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper-bright); padding: 10px 16px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+  .skip:focus { top: 12px; color: var(--paper-bright); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+  [id] { scroll-margin-top: 76px; }
+  .overline { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .overline.rust { color: var(--rust); }
+  h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 600; }
+  kbd { font-family: var(--mono); font-size: 0.85em; background: var(--paper-bright); border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; white-space: nowrap; }
+
+  /* Header */
+  .site-head { position: sticky; top: 0; z-index: 60; background: rgba(247,243,236,0.92); -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--hairline); }
+  .nav-inner { display: flex; align-items: center; gap: 16px; min-height: 58px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 16px; white-space: nowrap; text-decoration: none; }
+  .brand:hover { color: var(--ink); }
+  .glyph { width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0; box-shadow: var(--shadow-soft); }
+  .nav-inner > nav { margin-left: auto; }
+  .nav-links { display: flex; gap: 4px; list-style: none; }
+  .nav-links a { display: block; color: var(--secondary); text-decoration: none; font-size: 14px; font-weight: 500; padding: 7px 12px; border-radius: 999px; }
+  .nav-links a:hover { background: var(--hover); color: var(--ink); }
+  .nav-links a[aria-current="page"] { background: var(--chip); color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--rust); }
+
+  /* Footer */
+  .site-foot { border-top: 1px solid var(--hairline); background: var(--paper-warm); }
+  .foot-inner { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: flex-start; justify-content: space-between; padding-top: 30px; padding-bottom: 34px; }
+  .foot-brand { display: flex; gap: 12px; align-items: center; }
+  .foot-brand .glyph { width: 26px; height: 26px; }
+  .foot-brand p { font-size: 14px; color: var(--secondary); }
+  .foot-brand .copy { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--muted); }
+  .foot-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+  .foot-nav a { color: var(--secondary); }
+  .foot-nav a:hover { color: var(--rust-deep); }
+  .foot-mail { overflow-wrap: anywhere; }
+
+  /* Document */
+  .doc { max-width: 820px; margin: 0 auto; padding: 56px var(--gutter) 72px; }
+  .doc h1 { font-size: clamp(34px, 6vw, 50px); line-height: 1.06; letter-spacing: -0.012em; margin-top: 10px; }
+  .lede { font-size: clamp(17px, 2.2vw, 19px); color: var(--secondary); margin-top: 14px; max-width: 60ch; }
+  .doc h2 { font-size: clamp(23px, 3.4vw, 28px); line-height: 1.2; margin: 52px 0 14px; padding-top: 22px; border-top: 1px solid var(--hairline); }
+  .doc h2 .num { font-family: var(--mono); font-size: 12px; color: var(--rust); letter-spacing: 0.1em; display: block; margin-bottom: 4px; font-weight: 600; }
+  .doc h3.group { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust-deep); margin: 30px 0 10px; }
+  .doc p { margin-top: 12px; }
+  .doc b, .doc strong { color: var(--ink); font-weight: 600; }
+  .doc code { font-family: var(--mono); font-size: 0.86em; background: var(--chip); border-radius: 5px; padding: 1px 6px; overflow-wrap: anywhere; }
+
+  .contact { margin-top: 28px; background: var(--paper-bright); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; }
+  .contact .t { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); }
+  .contact .s { font-size: 15px; color: var(--secondary); margin-top: 4px; max-width: 46ch; }
+  .mail-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; background: var(--rust); color: var(--paper-bright); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 10px 20px; overflow-wrap: anywhere; text-align: center; }
+  .mail-btn:hover { background: var(--rust-deep); color: var(--paper-bright); }
+
+  .jump { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .jump a { display: inline-block; font-size: 14px; font-weight: 600; color: var(--secondary); text-decoration: none; background: var(--paper-bright); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; }
+  .jump a:hover { background: var(--chip); color: var(--ink); }
+
+  .steps { list-style: none; counter-reset: s; display: grid; gap: 12px; margin-top: 16px; }
+  .steps li { counter-increment: s; position: relative; background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 12px; padding: 14px 18px 14px 58px; }
+  .steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 18px; top: 15px; font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--rust); }
+  .steps b { display: block; font-family: var(--serif); font-size: 18px; }
+
+  details { border: 1px solid var(--hairline); border-radius: 12px; background: var(--paper-bright); margin-top: 10px; }
+  details[open] { border-color: var(--card-border); }
+  summary { list-style: none; cursor: pointer; padding: 14px 48px 14px 18px; position: relative; font-weight: 600; color: var(--ink); font-size: 16px; border-radius: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-size: 18px; color: var(--rust); }
+  details[open] summary::after { content: "\2212"; }
+  summary:hover { background: var(--hover); }
+  .answer { padding: 0 18px 16px; color: var(--body); font-size: 15.5px; }
+  .answer p:first-child { margin-top: 0; }
+  .answer ul, .answer ol { margin: 10px 0 0 0; padding-left: 22px; }
+  .answer li { margin-top: 6px; }
+  .answer li::marker { color: var(--rust); }
+
+  .req { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; margin-top: 14px; }
+  .req > div { background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 12px; padding: 14px 16px; }
+  .req dt { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust-deep); }
+  .req dd { margin-top: 6px; font-size: 15px; }
+
+  .bugbox { margin-top: 16px; background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 14px; padding: 18px 22px; }
+  .bugbox ol { padding-left: 22px; }
+  .bugbox li { margin-top: 6px; }
+  .bugbox li::marker { color: var(--rust); font-family: var(--mono); font-size: 13px; }
+  .note { margin-top: 16px; background: var(--study); border: 1px solid var(--study-border); border-radius: 12px; padding: 14px 18px; font-size: 15px; }
+
+  @media (max-width: 640px) {
+    :root { --gutter: 16px; }
+    .doc { padding-top: 40px; }
+    .steps li { padding-left: 50px; }
+    .steps li::before { left: 14px; }
+    .nav-links a { padding: 7px 9px; font-size: 13.5px; }
+  }
+  @media (max-width: 360px) { .mail-btn { padding: 10px 14px; font-size: 14px; } }
+  @media (max-width: 420px) {
+    .brand .bn { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .nav-links { gap: 2px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img class="glyph" src="icon.png" alt="" width="30" height="30">
+      <span class="bn">Medical Casebook</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <p class="overline">Help</p>
+  <h1>Support</h1>
+  <p class="lede">Stuck on something? Found a bug? Have an idea that would make Medical Casebook better? Start with the answers below, or write to the developer directly.</p>
+
+  <div class="contact">
+    <div>
+      <p class="t">Email support</p>
+      <p class="s">Every message is read. Response times vary, so including your app version, device and OS version up front helps get you an answer sooner.</p>
+    </div>
+    <a class="mail-btn" href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20support">proceduralist@<wbr>proceduralist.io</a>
+  </div>
+
+  <nav aria-label="On this page">
+    <ul class="jump">
+      <li><a href="#start">Getting started</a></li>
+      <li><a href="#faq-sync">Sync &amp; data</a></li>
+      <li><a href="#faq-recording">Recording</a></li>
+      <li><a href="#faq-notes">Sticky Notes &amp; writing</a></li>
+      <li><a href="#faq-pdf">PDF export</a></li>
+      <li><a href="#faq-study">Study</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#bugs">Report a bug</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= Getting started ================= -->
+  <h2 id="start"><span class="num" aria-hidden="true">01</span> Getting started</h2>
+  <ol class="steps" role="list">
+    <li><b>Install on each device you use</b> Medical Casebook runs on Mac, iPhone and iPad. To sync, sign in to the same Apple Account on every device, with iCloud turned on. There is no app account to create.</li>
+    <li><b>Capture a topic</b> Open Capture, type the thing you need to look up (or tap the microphone and say it), and press Save or Return. New topics start as Incomplete.</li>
+    <li><b>Answer it on the Mac</b> Open the topic from Topics. Add tags and sources, then write the Synthesis Note in sections. Use Add In-Text Citation to cite a source as you write.</li>
+    <li><b>Mark what you want to remember</b> Select a phrase and choose Hide for study. When the topic is done, set its status to Answered.</li>
+    <li><b>Study</b> Open Study each day. Your hidden phrases — and, with Include images on, your starred images and collections — come back as spaced-repetition flashcards.</li>
+    <li><b>Jot and record anywhere</b> Use Sticky Notes for anything that isn't a topic yet, and file it later. Turn on Recording to record a lecture into a note.</li>
+  </ol>
+
+  <!-- ================= FAQ ================= -->
+  <h2 id="faq"><span class="num" aria-hidden="true">02</span> Frequently asked questions</h2>
+
+  <h3 class="group" id="faq-sync">Sync &amp; data</h3>
+
+  <details>
+    <summary>How does sync work?</summary>
+    <div class="answer">
+      <p>Your casebook is stored on each device and synced through Apple's iCloud, in a private database in your own iCloud account. Any Mac, iPhone or iPad signed in to the same Apple Account stays up to date automatically. There's no sign-in inside the app.</p>
+      <p>Your topics, notes, images, sticky notes, follow ups and study history sync. Some settings are set separately on each device, such as Recording, new cards a day, Include images and your daily goal.</p>
+      <p>If two devices edit the same sticky note at once, the edits are merged, or a &ldquo;(conflicting copy)&rdquo; note is kept so nothing is lost.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>My content isn't syncing between devices.</summary>
+    <div class="answer">
+      <ol>
+        <li>Check that every device is signed in to the <b>same Apple Account</b>.</li>
+        <li>In your device's iCloud settings, make sure iCloud is on for the app. It's listed under its home-screen name, <b>Casebook</b>.</li>
+        <li>Check that each device is online. Sync pauses without a connection and catches up when you're back.</li>
+        <li>Check your iCloud storage. A full iCloud account can stop sync.</li>
+        <li>Open the app on both devices and give it a few minutes.</li>
+        <li>Still stuck? Restart both devices, then <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20sync%20problem">email us</a> with which devices are involved and what isn't arriving.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details>
+    <summary>Is my content backed up? What happens if I delete the app?</summary>
+    <div class="answer">
+      <p>With iCloud on, your casebook is kept in your private iCloud database. Reinstall the app on a device signed in to the same Apple Account and it comes back.</p>
+      <p>If iCloud is off for the app, your casebook exists only on that device and in any backups you make of it, such as iCloud Backup, a Finder backup or Time Machine. Deleting the app from an iPhone or iPad then deletes it. Keep iCloud on if you want a copy that survives.</p>
+      <p>The speech model isn't included in backups. If Recording is on, the app downloads it again when it's needed.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>I deleted something by accident.</summary>
+    <div class="answer">
+      <p>Open <b>Trash</b> (in the sidebar on the Mac; under More on iPhone and iPad). Deleted topics — with everything in them — Sticky Notes and Follow Ups stay there for 30 days. Choose <b>Restore</b> to put one back.</p>
+      <p>Images don't go to Trash. On iPhone and iPad, deleting an image asks you to confirm first; on the Mac, Delete Image removes it immediately. Either way it can't be undone.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I delete my data?</summary>
+    <div class="answer">
+      <ul>
+        <li><b>Individual items:</b> delete them, then use <b>Delete Now</b> or <b>Empty Trash</b> in Trash. Anything left in Trash is deleted after 30 days.</li>
+        <li><b>The speech model:</b> on the Mac, open Settings &rsaquo; Recording, turn off <b>Record in Sticky Notes</b>, then choose <b>Remove</b>. On iPhone and iPad, go to More &rsaquo; Recording and choose <b>Remove from This Device</b>.</li>
+        <li><b>Everything on one device:</b> on iPhone and iPad, delete the app. On the Mac, delete the app, then also delete the folder <code>~/Library/Containers/com.radiology.Radiology-Casebook</code>, which holds its data and the speech model; moving the app to the Trash leaves that folder behind. Transcript files and PDFs you saved elsewhere are ordinary files to delete in Finder.</li>
+        <li><b>Your iCloud copy:</b> delete the app's data in your device's iCloud settings, where you manage iCloud storage.</li>
+      </ul>
+      <p>The developer holds no copy of your data, so there's nothing to delete on our side — and we can't restore anything for you. See the <a href="privacy.html#choices">privacy policy</a>.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I store patient information?</summary>
+    <div class="answer">
+      <p>Please don't. Medical Casebook is a personal study tool for what you learn from articles, textbooks and teaching. It isn't a medical record, it isn't designed for HIPAA compliance, and the developer doesn't sign business associate agreements.</p>
+      <p>Leave out names, dates of birth, record or accession numbers and faces, and remove identifying text from images before you import them. Images are stored as you import them, including any metadata embedded in the file, so remove identifying metadata too.</p>
+      <p>The same goes for recordings: don't record sessions where patients are identified, and remove any identifiers that end up in a transcript.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Does the app collect any of my data?</summary>
+    <div class="answer">
+      <p>No. There are no developer servers, accounts, analytics or tracking. The app goes online only for iCloud sync, source lookups you ask for, the speech-model download, and Apple's speech recognition when your device can't dictate on its own. The <a href="privacy.html">privacy policy</a> lists every connection.</p>
+    </div>
+  </details>
+
+  <h3 class="group" id="faq-recording">Recording</h3>
+
+  <details>
+    <summary>How do I set up recording?</summary>
+    <div class="answer">
+      <p><b>On the Mac:</b> open Settings, choose <b>Recording</b>, and turn on <b>Record in Sticky Notes</b>. The speech model (about 630&nbsp;MB) downloads. Then open a sticky note and press <b>Record</b>. You can record from the <b>Microphone</b>, or from <b>System Audio</b> for a Zoom or Teams lecture or a video. A chip in the title bar shows the recording from any section. When you stop, the transcript is added to the bottom of the note, or saved to a folder if you've chosen that.</p>
+      <p><b>On iPhone and iPad:</b> go to <b>More &rsaquo; Recording</b> and turn on <b>Record in Sticky Notes</b>. Then press <b>Record</b> at the foot of a sticky note. When you stop, the transcript is added to the bottom of the note. If you leave the note while recording, a <b>Recording &middot; Stop</b> bar sits above the tab bar.</p>
+      <p>Recording makes a verbatim transcript of English speech, on your device. It's automatic, so it can mishear: check important details against the source. The audio itself is never saved.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Which iPhones and iPads can record?</summary>
+    <div class="answer">
+      <p>Recording needs a device that can run Whisper large-v3-turbo:</p>
+      <ul>
+        <li><b>iPhone:</b> any iPhone with an A15 chip or newer &mdash; iPhone 13 or later, or iPhone SE (3rd generation).</li>
+        <li><b>iPad:</b> an iPad with an A15, A16, A17&nbsp;Pro or M-series chip.</li>
+      </ul>
+      <p>Recording isn't supported on older chips (A14 and earlier) &mdash; for example iPhone 11 and 12, iPhone SE (2nd generation), iPad Air (4th generation) and iPad (10th generation). There's no smaller fallback model. Everything else in the app works as usual.</p>
+      <p>On the Mac, a Mac with Apple silicon is recommended for Recording.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How big is the speech model, and when does it download?</summary>
+    <div class="answer">
+      <ul>
+        <li>It's <b>about 630&nbsp;MB</b> (M1 iPads use a 625&nbsp;MB compressed build of the same model), downloaded from Hugging Face when you turn Recording on.</li>
+        <li>On iPhone and iPad, <b>Wi-Fi is recommended</b>. If a download is interrupted, it picks up where it left off.</li>
+        <li>On iPhone and iPad, the app checks your free space first and won't start the download unless about 1&nbsp;GB is free: the download, plus room for the system to prepare the model.</li>
+        <li>The model isn't included in device backups. If Recording is on and the model is missing, for example after restoring a device, the app fetches it again — on iPhone and iPad only over Wi-Fi.</li>
+        <li>To free the space on the Mac, turn off <b>Record in Sticky Notes</b> in Settings &rsaquo; Recording and choose <b>Remove</b>. On iPhone and iPad, choose <b>Remove from This Device</b> in More &rsaquo; Recording.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Where did the AI summary go?</summary>
+    <div class="answer">
+      <p>The on-device summarizer was removed in October 2026. Recording now makes a verbatim transcript only, with nothing summarized or rewritten. The app deletes the files the old summarizer left behind.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I save transcripts to a folder instead of a note?</summary>
+    <div class="answer">
+      <p>On the Mac, yes. In Settings &rsaquo; Recording, turn on <b>Save transcripts to a folder</b> and choose a folder. Each recording is saved as its own .txt file, and the sticky note is left unchanged. On iPhone and iPad the transcript always goes into the note.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Tips for better recordings</summary>
+    <div class="answer">
+      <ul>
+        <li>On iPhone and iPad, recording <b>continues with the phone locked</b>.</li>
+        <li>The phone uses its <b>built-in microphone</b>, even when AirPods are connected, so sit where it can hear the speaker.</li>
+        <li>Many words Whisper was unsure of appear as <b>[word?]</b>, and stretches it couldn't make out as <b>[inaudible]</b>. Not every error is marked, so check important details against the source.</li>
+        <li>Silence is skipped, along with common stock phrases (such as &ldquo;Thank you.&rdquo;) that Whisper sometimes produces from it.</li>
+        <li>Recording transcribes English speech.</li>
+        <li>Each transcribed block is labeled &ldquo;Transcribed from a voice recording. May contain errors.&rdquo;</li>
+        <li>If a recording is interrupted, its words are delivered the next time you open the app.</li>
+        <li>Record only where you're allowed to, and if you record a call or meeting, make sure the other participants agree. Don't record sessions where patients are identified.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Record says access was denied.</summary>
+    <div class="answer">
+      <p>Allow the microphone for the app in Settings &rsaquo; Privacy &amp; Security &rsaquo; Microphone (iPhone and iPad) or System Settings &rsaquo; Privacy &amp; Security &rsaquo; Microphone (Mac). To record System Audio on the Mac, also allow it under <b>Screen &amp; System Audio Recording</b>. Only the audio is kept; nothing on your screen is saved.</p>
+    </div>
+  </details>
+
+  <h3 class="group" id="faq-notes">Sticky Notes &amp; writing</h3>
+
+  <details>
+    <summary>Can I edit Sticky Notes on iPhone and iPad?</summary>
+    <div class="answer">
+      <p>Yes. On Mac, iPhone and iPad you can create, edit and search notes, use bold, italic and underline, pick a color (Plain, Sand, Clay, Sage or Slate), record, file and trash them. Edits sync between your devices.</p>
+      <p>On iPad the list sits beside the note, with keyboard shortcuts: <kbd>&#8984;N</kbd> new note, <kbd>&#8997;&uarr;</kbd>/<kbd>&#8997;&darr;</kbd> to step through notes, <kbd>&#8984;&#8679;A</kbd> and <kbd>&#8984;&#8679;N</kbd> to file.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How does filing a sticky note work?</summary>
+    <div class="answer">
+      <ul>
+        <li><b>Attach to…</b> (<kbd>&#8984;&#8679;A</kbd>) copies the note onto an existing topic.</li>
+        <li><b>Make a topic</b> (<kbd>&#8984;&#8679;N</kbd>) turns it into a new topic.</li>
+        <li><b>Also file to…</b> files the same note to another topic.</li>
+      </ul>
+      <p>Filing copies the text, with its bold, italic and underline, and marks the note as filed. The note itself stays in Sticky Notes. On the Mac the sidebar shows how many notes are still unfiled, and <kbd>&#8984;&#9003;</kbd> moves a note to Trash.</p>
+      <p>On iPhone and iPad, if a topic's note hasn't finished syncing, or uses a font the device doesn't have, filing is refused with an explanation. Try again later, or file the note from the Mac.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I write topic notes on iPhone or iPad?</summary>
+    <div class="answer">
+      <p>The Synthesis Note — sections, formatting, citations and Hide for study — is written on the Mac. On iPhone and iPad it opens as a reader, marked &ldquo;Read-only &middot; edit on Mac&rdquo;, that remembers the last section you read. You can still change a topic's status, tags, sources and images there, and quiz yourself with Study Mode.</p>
+      <p>For quick writing on the go, use Sticky Notes and file them onto the topic later.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I add sources and citations?</summary>
+    <div class="answer">
+      <p>Add a <b>Journal Article</b> by DOI or PubMed ID, a <b>Website</b> by URL, or a <b>Book</b> by ISBN, and fetch its details. On iPhone and iPad you can scan a book's ISBN barcode with the camera.</p>
+      <p>While writing on the Mac, choose <b>Add In-Text Citation</b> to place a numbered marker. Numbers follow the order sources first appear in the note and renumber themselves as you edit. The reference list uses AMA style.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Capture won't save my topic.</summary>
+    <div class="answer">
+      <p>Capture blocks a name that exactly matches an existing topic or group, ignoring capitals, and shows a warning such as &ldquo;There is already a topic with that name.&rdquo; Open the existing topic instead, or reword the new one.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I reorder image collections, or use the Repository?</summary>
+    <div class="answer">
+      <p>In a topic, drag collections into order on the Mac, or use <b>Move Up</b> and <b>Move Down</b> on any device.</p>
+      <p>Star an image or a whole collection to add it to the <b>Repository</b>. There you can filter by Specialty, Anatomy, Disease, Kind and Modality, and sort by date, caption, collection or topic. Removing something from the Repository never deletes it; it stays with its topic.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Does the Mac app work in Split View?</summary>
+    <div class="answer">
+      <p>Yes. The Mac app opens full screen, and it resizes for Split View and narrow windows; the Topics index packs into fewer columns as the window narrows. On iPad, the app works in all orientations and with iPadOS multitasking, including resizable windows.</p>
+    </div>
+  </details>
+
+  <h3 class="group" id="faq-pdf">PDF export</h3>
+
+  <details>
+    <summary>How do I export a topic as a PDF?</summary>
+    <div class="answer">
+      <p>On the Mac, open the topic and choose <b>Share</b>, then <b>Save PDF…</b> or <b>Share PDF…</b>. On iPhone and iPad, export from the topic page and use the share sheet to save or send it.</p>
+      <p>The PDF is laid out like a journal article: a running header, the title, tags, a two-column body with a drop cap, figures in a framed two-up grid with their annotations drawn on and listed under each caption, and references.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can a figure appear in the middle of the PDF?</summary>
+    <div class="answer">
+      <p>Yes. On the Mac, right-click an image, choose <b>Add to Section</b> and pick a section. The image prints right after that section instead of with the figures at the end, in PDFs exported from any device. Choose <b>Remove from Section</b> to undo it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What is the Fill in the Blank worksheet?</summary>
+    <div class="answer">
+      <p>A PDF where every phrase you marked Hide for study becomes a numbered blank, with an answer key at the end. There is also a version without the answer key, for handing out. On iPhone and iPad, use the <b>Include answer key</b> switch.</p>
+    </div>
+  </details>
+
+  <h3 class="group" id="faq-study">Study, Follow Ups &amp; Dashboard</h3>
+
+  <details>
+    <summary>How are flashcards made and scheduled?</summary>
+    <div class="answer">
+      <ul>
+        <li><b>Phrase cards:</b> each phrase marked Hide for study in an <b>Answered</b> topic becomes a cloze card built from its sentence.</li>
+        <li><b>Image cards:</b> with <b>Include images</b> on, a starred picture is shown bare; the answer is its title, caption and annotations.</li>
+        <li><b>Collection cards:</b> a starred collection becomes one card you page through.</li>
+      </ul>
+      <p>Scheduling follows Anki's classic SM-2 rules. Grade each card <b>Again, Hard, Good or Easy</b> (keys <kbd>1</kbd>&ndash;<kbd>4</kbd>). The study day starts at 4 AM. You can set how many new cards a day to see (20 by default), use <b>Practice anyway</b> without changing due dates, <b>Undo</b> with <kbd>&#8984;Z</kbd>, and <b>Save and Exit</b> to <b>Resume</b> later.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Why isn't a hidden phrase showing up as a card?</summary>
+    <div class="answer">
+      <ul>
+        <li>Phrase cards come only from topics marked <b>Answered</b>.</li>
+        <li>Cards from the same paragraph are held back as &ldquo;siblings&rdquo; so one doesn't give away the next; they come on another day.</li>
+        <li>You may have reached your new-cards-a-day limit.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I zoom into an image while studying?</summary>
+    <div class="answer">
+      <p>Open the full-size viewer. Pinch or press <kbd>&#8984;+</kbd> to zoom, drag to pan, double-click to fit, and use <kbd>&larr;</kbd>/<kbd>&rarr;</kbd> to page through a collection.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What's the difference between Study and Study Mode?</summary>
+    <div class="answer">
+      <p><b>Study Mode</b> works inside a topic's note: it covers your hidden phrases so you can reveal them one at a time (on iPhone and iPad, as a queue of cards with Reveal answer and Got it / Missed). <b>Study</b> is the flashcard section, which schedules those phrases and your starred images with spaced repetition.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Will Follow Ups remind me?</summary>
+    <div class="answer">
+      <p>No. Follow Ups don't send notifications. Each has a due day and sorts into Overdue, Today, Later and Completed; open Follow Ups to see what's due. On the Mac the sidebar shows a count.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Where is the Dashboard on iPhone and iPad?</summary>
+    <div class="answer">
+      <p>Under <b>More</b>. It shows your Streak, Today's Goal, By Specialty, Activity and Flashcards, in a compact layout for phones and narrow iPad windows. Reorder the cards in <b>Dashboard Settings</b>.</p>
+    </div>
+  </details>
+
+  <!-- ================= Requirements ================= -->
+  <h2 id="requirements"><span class="num" aria-hidden="true">03</span> Requirements</h2>
+  <dl class="req">
+    <div><dt>Mac</dt><dd>macOS 26.3 or later.</dd></div>
+    <div><dt>iPhone &amp; iPad</dt><dd>iOS or iPadOS 26.4 or later.</dd></div>
+    <div><dt>App version</dt><dd>Version 2.9 or later for everything on this page.</dd></div>
+    <div><dt>Recording</dt><dd>Transcribes English speech. On iPhone and iPad: an iPhone with an A15 chip or newer (iPhone 13 or later, or iPhone SE 3rd generation), or an iPad with an A15, A16, A17&nbsp;Pro or M-series chip, and about 1&nbsp;GB of free space for the model. On the Mac, Apple silicon is recommended.</dd></div>
+    <div><dt>Sync</dt><dd>Optional. Needs iCloud; no app account.</dd></div>
+    <div><dt>Network</dt><dd>Only for iCloud sync, source lookups you ask for, the model download, and Apple's speech recognition for Capture dictation when your device can't do it on its own.</dd></div>
+  </dl>
+
+  <!-- ================= Bugs ================= -->
+  <h2 id="bugs"><span class="num" aria-hidden="true">04</span> Report a bug or suggest a feature</h2>
+  <p>Email <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20bug%20report&amp;body=App%20version%3A%20%0ADevice%3A%20%0AmacOS%20%2F%20iOS%20%2F%20iPadOS%20version%3A%20%0A%0AWhat%20I%20did%3A%20%0AWhat%20I%20expected%3A%20%0AWhat%20happened%20instead%3A%20%0A">proceduralist@proceduralist.io</a>. For a bug, please include:</p>
+  <div class="bugbox">
+    <ol>
+      <li><b>App version.</b> On the Mac it's in Settings &rsaquo; General. If you're not sure on iPhone or iPad, tell us roughly when you last updated.</li>
+      <li><b>Device</b> — for example &ldquo;MacBook Air M2&rdquo; or &ldquo;iPhone 15&rdquo;.</li>
+      <li><b>OS version</b> — macOS, iOS or iPadOS.</li>
+      <li><b>What you did, what you expected, and what happened instead.</b> Steps to reproduce help most.</li>
+      <li>For sync problems, <b>which devices</b> are involved. For recording problems, whether you used the Microphone or System Audio.</li>
+      <li>A <b>screenshot</b>, if you can.</li>
+    </ol>
+  </div>
+  <p class="note">Please don't send screenshots or notes that contain patient information.</p>
+  <p>Ideas are welcome too: <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20feature%20idea">send a feature idea</a>.</p>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <img class="glyph" src="icon.png" alt="" width="26" height="26">
+      <div>
+        <p>Medical Casebook</p>
+        <p class="copy">&copy; 2026 Medical Casebook</p>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+        <li><a class="foot-mail" href="mailto:proceduralist@proceduralist.io">proceduralist@proceduralist.io</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
