@@ -77,7 +77,7 @@
   .foot-mail { overflow-wrap: anywhere; }
 
   /* Document */
-  .doc { max-width: 780px; margin: 0 auto; padding: 56px var(--gutter) 72px; }
+  .doc { max-width: 1120px; margin: 0 auto; padding: 56px var(--gutter) 72px; }
   .doc h1 { font-size: clamp(34px, 6vw, 50px); line-height: 1.06; letter-spacing: -0.012em; margin-top: 10px; }
   .stamp { margin-top: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
   .doc h2 { font-size: clamp(23px, 3.4vw, 28px); line-height: 1.2; margin: 46px 0 12px; padding-top: 22px; border-top: 1px solid var(--hairline); }
@@ -173,7 +173,6 @@
       <li><a href="#third-parties">Third parties</a></li>
       <li><a href="#children">Children</a></li>
       <li><a href="#choices">Your choices and deleting data</a></li>
-      <li><a href="#medical">Medical information</a></li>
       <li><a href="#changes">Changes to this policy</a></li>
       <li><a href="#contact">Contact</a></li>
     </ol>
@@ -209,10 +208,9 @@
   <h3>Recording into Sticky Notes</h3>
   <p>Recording uses Whisper (large-v3-turbo), run on your own device by the open-source WhisperKit package. English speech is transcribed verbatim on the device. <b>The audio is held in memory only and is never written to disk</b>, and neither the audio nor the transcript is sent to the developer or to any third party.</p>
   <p>The transcript goes into the sticky note you recorded in, and is stored and synced like the rest of your casebook. On the Mac you can instead save it to a folder, as described above.</p>
-  <p>There is no language model and no AI summary. An earlier on-device summarizer was removed in October 2026, and the app deletes the files it left behind.</p>
   <p>Once the speech model and its tokenizer are on your device, recording works offline and normally makes no network requests. If any of those files are missing or damaged, the app downloads them again from Hugging Face. Your audio and transcripts are never sent.</p>
   <h3>Recording System Audio (Mac)</h3>
-  <p>On the Mac you can record System Audio, for example a Zoom or Teams lecture or a video. macOS controls this through the <i>Screen &amp; System Audio Recording</i> permission. The app keeps only the audio. macOS requires a screen stream to capture audio, so the app asks for the smallest one possible (2&times;2 pixels) and discards it without reading it. Nothing on your screen is saved or sent anywhere. If you record a call or meeting, make sure you have the other participants' permission.</p>
+  <p>On the Mac you can record System Audio, for example a lecture on a conference call or a video. macOS controls this through the <i>Screen &amp; System Audio Recording</i> permission. The app keeps only the audio. macOS requires a screen stream to capture audio, so the app asks for the smallest one possible (2&times;2 pixels) and discards it without reading it. Nothing on your screen is saved or sent anywhere.</p>
   <h3>Dictating a topic in Capture</h3>
   <p>The microphone button in Capture uses Apple's speech recognition. Where your device supports on-device recognition, the audio stays on the device. Where it doesn't, your dictation is sent to Apple to be recognized, under Apple's privacy policy. This happens only while you are dictating.</p>
 
@@ -282,29 +280,17 @@
   <ul class="list" role="list">
     <li><b>Use it without iCloud.</b> Sync is optional. To keep your casebook out of iCloud sync, turn off iCloud for Casebook in your device's iCloud settings, or sign out of iCloud. Your casebook then stays on that device, and in any device backups you make, such as iCloud Backup, a Finder backup or Time Machine.</li>
     <li><b>Trash.</b> Deleted topics (and everything in them), Sticky Notes and Follow Ups stay in Trash for 30 days and are then deleted for good. You can Restore them, or remove them sooner with Delete Now or Empty Trash. Images don't go to Trash. On iPhone and iPad, deleting an image asks you to confirm; on the Mac, Delete Image acts immediately. In both cases it can't be undone.</li>
-    <li><b>The speech model.</b> On the Mac, turn off <i>Record in Sticky Notes</i> in Settings &rsaquo; Recording; the app asks you to confirm, then removes the model. On iPhone and iPad, choose <i>Remove from This Device</i> in More &rsaquo; Recording. While Recording is off, the app won't download the model again.</li>
+    <li><b>The speech model.</b> Uncheck <i>Record in Sticky Notes</i> to remove the speech model from your device.</li>
     <li><b>Transcript files</b> you saved to a folder on the Mac are ordinary files; delete them in Finder.</li>
     <li><b>Deleting the app.</b> On iPhone and iPad, deleting the app removes its data from that device, including the speech model and any recovery files. On the Mac, deleting the app leaves its data behind. To remove it, also delete the folder <code>~/Library/Containers/com.radiology.Radiology-Casebook</code>, along with any transcript files or PDFs you saved elsewhere.</li>
     <li><b>Your iCloud copy</b> stays in your iCloud account until you delete it. You can do that in your device's iCloud settings, under the option to manage your iCloud storage.</li>
   </ul>
   <p>Because we hold no data about you, there is nothing for us to export or delete on our side — and we can't recover your data for you.</p>
 
-  <h2 id="medical"><span class="num" aria-hidden="true">09</span> Medical information</h2>
-  <div class="callout warn" style="margin-top:14px">
-    <p style="margin-top:0"><b>Medical Casebook is a personal study tool, not a medical record.</b> It's designed for what you learn from articles, textbooks and teaching. It isn't intended for patient care.</p>
-  </div>
-  <ul class="list" role="list">
-    <li><b>Please don't enter information that could identify a patient</b> — names, dates of birth, medical record or accession numbers, addresses, faces, or images with identifying text burned in. Remove identifiers from an image before you import it.</li>
-    <li>Images are stored as you import them, including any metadata embedded in the file, such as when and where a photo was taken. Remove identifying metadata as well as visible identifiers before you import.</li>
-    <li>Record only where you're allowed to. Case conferences often mention patients: don't record sessions where patients are identified, and remove any identifiers that end up in a transcript.</li>
-    <li>The app isn't designed for HIPAA compliance, and the developer doesn't enter into business associate agreements. Your institution's policies may also apply to what you store.</li>
-    <li>Content you sync is stored in your iCloud account under Apple's iCloud terms.</li>
-  </ul>
-
-  <h2 id="changes"><span class="num" aria-hidden="true">10</span> Changes to this policy</h2>
+  <h2 id="changes"><span class="num" aria-hidden="true">09</span> Changes to this policy</h2>
   <p>If an update changes how the app handles data, we'll update this policy and the app's App Store privacy label, and change the effective date at the top of this page.</p>
 
-  <h2 id="contact"><span class="num" aria-hidden="true">11</span> Contact</h2>
+  <h2 id="contact"><span class="num" aria-hidden="true">10</span> Contact</h2>
   <p>Questions about privacy? Email <a href="mailto:proceduralist@proceduralist.io?subject=Medical%20Casebook%20privacy%20question">proceduralist@proceduralist.io</a>. For help with the app, see <a href="support.html">Support</a>.</p>
 </main>
 

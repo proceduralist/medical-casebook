@@ -435,7 +435,6 @@
   .sticky .f { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--secondary); margin-top: 12px; }
   .sticky .swatch { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 
-  .rec-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin-top: 26px; }
   .card { background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 14px; padding: 22px 22px 22px; }
   .card h3 { font-size: 21px; margin: 8px 0 4px; }
   .card > p { font-size: 15px; color: var(--secondary); }
@@ -465,42 +464,6 @@
   .fc-done .big { font-family: var(--serif); font-size: 28px; color: var(--ink); font-weight: 600; }
   .fc-done p { color: var(--secondary); margin-top: 6px; }
 
-  /* ===== Images & PDF ===== */
-  .coll { background: var(--paper-bright); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px 16px 18px; box-shadow: var(--shadow-card); }
-  .coll-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .coll-head .name { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin-right: auto; }
-  .conf { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--secondary); }
-  .conf i { width: 8px; height: 8px; border-radius: 50%; background: var(--conf-confirmed); display: block; }
-  .star { color: var(--rust); font-size: 15px; line-height: 1; }
-  .panel-band { margin-top: 14px; }
-  .panel-band .lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
-  .strip > span { aspect-ratio: 1; background: #12100E; border-radius: 6px; overflow: hidden; position: relative; }
-  .strip svg { width: 100%; height: 100%; }
-  .strip .fig { position: absolute; left: 4px; bottom: 4px; font-family: var(--mono); font-size: 9px; color: #fff; background: rgba(0,0,0,0.55); border-radius: 4px; padding: 1px 4px; }
-  .reorder { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
-  .pdf { background: #fff; border: 1px solid var(--card-border); border-radius: 4px; box-shadow: var(--shadow-card); padding: 22px 22px 18px; aspect-ratio: auto; max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; overflow: hidden; }
-  @media (min-width: 400px) { .pdf { aspect-ratio: 8.5 / 11; } }
-  .pdf .rh { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--hairline); padding-bottom: 6px; }
-  .pdf .pt { font-family: var(--serif); font-size: 19px; line-height: 1.15; color: var(--ink); font-weight: 600; margin-top: 12px; }
-  .pdf .pm { font-family: var(--mono); font-size: 8px; color: var(--muted); margin-top: 6px; letter-spacing: 0.06em; }
-  .pdf .tagrow .chip { font-size: 8px; padding: 1px 6px; }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; flex: 1; min-height: 0; }
-  .col .sec { font-family: var(--serif); font-size: 10px; font-weight: 700; color: var(--ink); margin: 6px 0 4px; }
-  .ln { height: 4px; background: var(--hairline); border-radius: 2px; margin-bottom: 4px; }
-  .ln.s { width: 70%; }
-  .drop { display: flex; gap: 5px; }
-  .drop b { font-family: var(--serif); font-size: 26px; line-height: 0.9; color: var(--rust); font-weight: 600; }
-  .drop div { flex: 1; }
-  .pfig { margin: 6px 0; border: 1px solid var(--hairline); padding: 4px; }
-  .pfig .im { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-  .pfig .im span { aspect-ratio: 1; background: #12100E; border-radius: 2px; overflow: hidden; }
-  .pfig .im svg { width: 100%; height: 100%; }
-  .pfig .fc2 { font-family: var(--serif); font-size: 7.5px; color: var(--secondary); margin-top: 3px; }
-  .pdf .refs { border-top: 1px solid var(--hairline); margin-top: 8px; padding-top: 6px; font-family: var(--serif); font-size: 7.5px; color: var(--secondary); }
-  .pdf .rf { font-family: var(--mono); font-size: 7.5px; color: var(--muted); text-align: center; margin-top: 8px; }
-  .add-sec { display: inline-block; font-size: 8px; font-family: var(--mono); color: var(--rust-deep); background: var(--badge-bg); border-radius: 999px; padding: 1px 6px; margin-bottom: 3px; }
-
   /* ===== Follow ups & dashboard ===== */
   .fu-list { list-style: none; }
   .bucket { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
@@ -521,16 +484,6 @@
   .heat i { aspect-ratio: 1; border-radius: 2px; background: var(--ramp-0); }
   .heat i.a { background: var(--ramp-1); } .heat i.b { background: var(--ramp-2); } .heat i.c { background: var(--ramp-3); } .heat i.d { background: var(--ramp-4); }
 
-  /* ===== Platforms ===== */
-  .split { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-  .plat { background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 16px; padding: 26px 24px 26px; }
-  .plat h3 { font-size: 25px; margin: 10px 0 4px; }
-  .plat .role { font-size: 15px; color: var(--secondary); }
-  .plat ul { list-style: none; margin-top: 16px; }
-  .plat li { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid var(--hairline); font-size: 14.5px; color: var(--body); }
-  .plat li:first-child { border-top: 0; }
-  .plat li .k { flex-shrink: 0; width: 20px; color: var(--rust); font-family: var(--mono); font-size: 11.5px; padding-top: 3px; }
-  .callout { margin-top: 22px; font-size: 15px; color: var(--body); background: var(--study); border: 1px solid var(--study-border); border-radius: 12px; padding: 14px 18px; }
 
   /* ===== Privacy band ===== */
   .privacy-band { text-align: center; }
@@ -538,12 +491,6 @@
   .privacy-band p { max-width: 66ch; margin: 14px auto 0; color: var(--secondary); font-size: 17px; }
   .marks { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; list-style: none; }
   .marks li { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 999px; padding: 7px 15px; }
-
-  /* ===== Requirements ===== */
-  .req { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
-  .req > div { background: var(--paper-bright); border: 1px solid var(--hairline); border-radius: 12px; padding: 16px 18px; }
-  .req dt { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust-deep); }
-  .req dd { margin-top: 6px; font-size: 15px; color: var(--body); }
 
   .cta { text-align: center; }
   .cta h2 { font-size: clamp(28px, 4.2vw, 40px); }
@@ -590,7 +537,7 @@
   <div class="wrap">
     <p class="overline rust">For physicians and trainees</p>
     <h1 id="hero-title">Medical Casebook</h1>
-    <p class="sub">Your definitive archive for academic study</p>
+    <p class="sub">Your definitive archive for academic study.</p>
     <p class="meta">Free &middot; Mac &middot; iPhone &middot; iPad &middot; iCloud sync &middot; No accounts &middot; No analytics</p>
     <div class="cta-row">
       <!-- App Store link: id6764286169 is the listing the September site linked (with ?mt=12, which
@@ -657,21 +604,21 @@
     <div class="section-head">
       <p class="overline">What's inside</p>
       <h2 id="inside-title">Built the way you actually learn</h2>
-      <p>A question comes up on rounds or at the workstation. You write it down, answer it later with real sources, and make it stick — without leaving one app.</p>
+      <p>When a question or thought arises, capture the topic. Then, organize with tags for easy retrieval and learn and write notes on the topic when you have time.</p>
     </div>
 
     <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Features">
     <ul class="features" id="featureTrack" role="list" tabindex="0" aria-label="Features, scroll sideways">
       <li class="feature" aria-roledescription="slide" aria-label="1 of 12">
         <div class="n">01</div>
-        <h3>Capture in seconds</h3>
-        <p>One field: type the topic or dictate it, and save. Topics captured here start as Incomplete, and the app stops you if a topic or group already has exactly that name (ignoring capitals).</p>
+        <h3>Capture Thoughts</h3>
+        <p>Type the topic or dictate and save. Topics are marked as incomplete.</p>
         <p class="where">Mac &middot; iPhone &middot; iPad</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="2 of 12">
         <div class="n">02</div>
-        <h3>Groups, and an A&ndash;Z index</h3>
-        <p>Topics nest under groups you name yourself. On the Mac they sit together in one A&ndash;Z index you can search, filter by status, and jump through by letter.</p>
+        <h3>A&ndash;Z Index</h3>
+        <p>Topics are organized by tags into a searchable database from A&ndash;Z. Group topics together for better organization.</p>
         <p class="where">Mac &middot; iPhone &middot; iPad</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="3 of 12">
@@ -688,8 +635,8 @@
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="5 of 12">
         <div class="n">05</div>
-        <h3>A note written in sections</h3>
-        <p>Each topic's Synthesis Note is a set of named sections in an outline rail, with headings, lists, highlights in any color, Find in note, and links from one topic to another.</p>
+        <h3>Synthesis Note</h3>
+        <p>Write notes that are divided into sections and fully editable with header styles, list formatting, font and background colors, and stylized text. Link text within the note to other topics. Hide parts of the text for later study.</p>
         <p class="where">Write on Mac &middot; read anywhere</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="6 of 12">
@@ -700,26 +647,26 @@
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="7 of 12">
         <div class="n">07</div>
-        <h3>Flashcards that make themselves</h3>
-        <p>The Study section turns the phrases you hid in Answered topics &mdash; and, with Include images on, your starred images and collections &mdash; into spaced-repetition cards, scheduled with Anki's classic SM-2 rules.</p>
+        <h3>Flashcards</h3>
+        <p>The Study section turns your hidden phrases and repository images into flashcards that use spaced repetition for studying.</p>
         <p class="where">Mac &middot; iPhone &middot; iPad</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="8 of 12">
         <div class="n">08</div>
-        <h3>Sticky Notes, everywhere</h3>
-        <p>Jot the half-formed thought now and file it onto a topic later. Sticky Notes are fully editable on Mac, iPhone and iPad, and sync between them.</p>
+        <h3>Sticky Notes</h3>
+        <p>Jot the half-formed thought now and file it into a topic later.</p>
         <p class="where">Mac &middot; iPhone &middot; iPad</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="9 of 12">
         <div class="n">09</div>
-        <h3>Lectures, transcribed verbatim</h3>
-        <p>Record into a sticky note and English speech is transcribed on your own device: a verbatim transcript, not a summary. It's automatic, so check important details against the source.</p>
+        <h3>Voice Recording</h3>
+        <p>Within Sticky Notes, use the record function to record lectures or voice which automatically transcribes the text verbatim.</p>
         <p class="where">Mac &middot; supported iPhone and iPad</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="10 of 12">
         <div class="n">10</div>
-        <h3>Images, annotated and collected</h3>
-        <p>Keep images with their topic, mark them up without touching the original, group them into collections and panels, and star the best into the Repository.</p>
+        <h3>Image Collections</h3>
+        <p>Add images to your topics and group them into collections. Add captions, tags, and annotations to images that can be hidden and revealed.</p>
         <p class="where">Annotate on Mac &middot; browse anywhere</p>
       </li>
       <li class="feature" aria-roledescription="slide" aria-label="11 of 12">
@@ -901,43 +848,6 @@
         <div class="f">Awaiting filing</div>
       </li>
     </ul>
-
-    <div class="rec-grid">
-      <div class="card">
-        <p class="overline rust">Recording</p>
-        <h3>Verbatim, on your device</h3>
-        <p>Press Record in a sticky note and English speech is transcribed by Whisper, running on-device through WhisperKit. You get a verbatim transcript, not an AI summary. It's automatic, so it can mishear: check important details against the source.</p>
-        <ul class="points" role="list">
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Audio is held in memory and never written to disk.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Many words Whisper was unsure of appear as <span class="unsure">[word?]</span>, and stretches it couldn't make out as [inaudible]. Not every error is marked.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Each block is labeled &ldquo;Transcribed from a voice recording. May contain errors.&rdquo;</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>The speech model (about 630&nbsp;MB) downloads when you turn Recording on, and again only if it's removed or goes missing.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Record only where you're allowed to. Case conferences often mention patients: don't record sessions where patients are identified, and remove any identifiers that end up in a transcript.</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <p class="overline rust">On the Mac</p>
-        <h3>Lectures, calls and videos</h3>
-        <p>Record from the microphone, or from System Audio for a Zoom or Teams lecture or a video.</p>
-        <ul class="points" role="list">
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>System Audio uses macOS's Screen &amp; System Audio Recording permission. Only the audio is kept; nothing on your screen is saved.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>If you record a call or meeting, make sure the other participants agree.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Optionally, Save transcripts to a folder: one .txt file per recording, and the note is left as it was.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>A chip in the title bar shows a running recording from any section.</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <p class="overline rust">On iPhone &amp; iPad</p>
-        <h3>In your pocket, in the room</h3>
-        <p>When you stop, the transcript is added to the bottom of the note. If you leave the note while recording, a Recording &middot; Stop bar sits above the tab bar.</p>
-        <ul class="points" role="list">
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Recording continues with the phone locked.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Uses the built-in microphone, even with AirPods connected.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>An interrupted recording is delivered the next time you open the app.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Needs an iPhone with an A15 chip or newer (iPhone 13 or later, or iPhone SE 3rd generation), or an iPad with an A15, A16, A17&nbsp;Pro or M-series chip.</span></li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <!-- Demo 3: Study flashcards -->
@@ -956,7 +866,6 @@
           <li><span class="k">04</span><span>A <b>full-size viewer</b>: pinch or &#8984;+ to zoom, drag to pan, double-click to fit, arrow keys to page.</span></li>
           <li><span class="k">05</span><span>Grade <b>Again, Hard, Good or Easy</b> (keys 1&ndash;4). Set new cards a day, Practice anyway, Undo, and Save and Exit to resume later.</span></li>
         </ul>
-        <p class="hint">Try it: <b>Show answer</b>, then grade the card.</p>
       </div>
 
       <div class="mac-window" role="group" aria-label="Interactive demo: a Study session">
@@ -968,97 +877,6 @@
           </div>
           <div class="fc-body" id="fcBody" aria-live="polite"></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Images, collections, PDF -->
-  <section class="show" id="images" aria-labelledby="images-title">
-    <div class="show-head">
-      <p class="overline rust">Images, collections &amp; PDF</p>
-      <h2 id="images-title">The pictures that make the point</h2>
-      <p>Images live with their topic. Group them into collections with a modality and a confidence, split a collection into panels, and print the whole topic as a journal-style PDF.</p>
-    </div>
-    <div class="two">
-      <div>
-        <figure>
-          <div class="coll" role="img" aria-label="A CT collection named Aortitis, staging, marked Confirmed and starred, with an Arterial panel of four images (one annotated with an arrow and labelled Fig.: 1), a Delayed panel of two, and Move Up and Move Down controls.">
-            <div aria-hidden="true">
-              <div class="coll-head">
-                <span class="name">Aortitis, staging</span>
-                <span class="chip t-mod" style="background:transparent;border:1px solid currentColor;font-size:11px;padding:2px 9px">CT</span>
-                <span class="conf"><i></i>Confirmed</span>
-                <span class="star">&#9733;</span>
-              </div>
-              <div class="panel-band">
-                <div class="lbl">Panel &middot; Arterial</div>
-                <div class="strip">
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="32" rx="24" ry="20" fill="#2a2a2c"/><circle cx="34" cy="30" r="7" fill="#d8d8dc"/><circle cx="34" cy="30" r="9.5" fill="none" stroke="#6b6b70" stroke-width="2.5"/><path d="M12 14 L26 25" stroke="#FFD60A" stroke-width="2"/><path d="M26 25 l-6 -1 l3 -4z" fill="#FFD60A"/></svg><span class="fig">Fig.: 1</span></span>
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="32" rx="24" ry="20" fill="#2a2a2c"/><circle cx="33" cy="33" r="7" fill="#d0d0d4"/><circle cx="33" cy="33" r="9" fill="none" stroke="#5f5f64" stroke-width="2"/></svg></span>
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><path d="M8 50 Q30 8 52 50" fill="#28282a"/><path d="M30 10 L30 52" stroke="#cfcfd3" stroke-width="5"/><text x="40" y="22" fill="#fff" font-size="10" font-family="sans-serif">A</text></svg></span>
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="34" rx="22" ry="18" fill="#262628"/><circle cx="31" cy="31" r="6" fill="#c4c4c8"/><circle cx="31" cy="31" r="8.5" fill="none" stroke="#58585d" stroke-width="2"/></svg></span>
-                </div>
-              </div>
-              <div class="panel-band">
-                <div class="lbl">Panel &middot; Delayed</div>
-                <div class="strip">
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="32" rx="24" ry="20" fill="#303033"/><circle cx="34" cy="30" r="7" fill="#9c9ca1"/><circle cx="34" cy="30" r="10" fill="none" stroke="#e6e6ea" stroke-width="2.5"/><text x="8" y="16" fill="#FF453A" font-size="14" font-family="sans-serif">*</text></svg></span>
-                  <span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="32" rx="24" ry="20" fill="#303033"/><circle cx="33" cy="33" r="7" fill="#9a9a9f"/><circle cx="33" cy="33" r="9.5" fill="none" stroke="#dcdce0" stroke-width="2"/></svg></span>
-                </div>
-              </div>
-              <div class="reorder"><span class="mock-pill">Move Up</span><span class="mock-pill">Move Down</span></div>
-            </div>
-          </div>
-        </figure>
-        <ul class="points" role="list">
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Annotations</b> — arrow, arrowhead, asterisk or letter, in seven colors, each of which can be labeled with the structure it points to. The original image is never changed, and marks can be shown or hidden. Edited on the Mac, shown everywhere.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Details per image</b> — a caption title and caption, a label badge such as &ldquo;Fig.: 12&rdquo;, a confidence (Confirmed, Suspected, Unsure) and a link to where it came from.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Collections</b> carry a Modality (CT, MR, XR, US, NM, DSA, Other), hold panels, and can be reordered: drag on the Mac, or Move Up and Move Down.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Full-screen viewer</b> with a filmstrip; arrow keys step through a panel, &#8997;-arrows jump between panels. On the Mac, Compare puts two images side by side with linked zoom.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>The Repository</b> gathers everything you starred into one grid, filtered by Specialty, Anatomy, Disease, Kind and Modality. Removing something from it never deletes it.</span></li>
-        </ul>
-      </div>
-
-      <div>
-        <figure>
-          <div class="pdf" role="img" aria-label="A PDF page: running header, title, tags, a two-column body with a drop cap, a figure placed right after the Imaging findings section, a reference list and a running footer.">
-            <div aria-hidden="true" style="display:flex;flex-direction:column;height:100%">
-              <div class="rh"><span>Vasculitis</span><span>Medical Casebook</span></div>
-              <div class="pt">How is giant cell arteritis worked up on imaging?</div>
-              <div class="pm">ANSWERED &middot; 2 SOURCES &middot; 6 FIGURES</div>
-              <div class="tagrow"><span class="chip t-spec">Cardiothoracic</span><span class="chip t-anat">Aorta</span><span class="chip t-dis">Inflammatory</span></div>
-              <div class="cols">
-                <div class="col">
-                  <div class="sec">Overview</div>
-                  <div class="drop"><b>G</b><div><div class="ln"></div><div class="ln"></div><div class="ln s"></div></div></div>
-                  <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div>
-                  <div class="sec">Imaging findings</div>
-                  <div class="ln"></div><div class="ln"></div><div class="ln s"></div>
-                  <div class="pfig">
-                    <span class="add-sec">Add to Section</span>
-                    <div class="im"><span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><circle cx="30" cy="30" r="13" fill="none" stroke="#8E8E93" stroke-width="5"/><path d="M8 10 L20 22" stroke="#FFD60A" stroke-width="2.5"/></svg></span><span><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#111"/><ellipse cx="30" cy="30" rx="20" ry="17" fill="#2c2c2e"/><circle cx="32" cy="30" r="7" fill="#d0d0d4"/></svg></span></div>
-                    <div class="fc2">Figure 1. Halo sign. Arrow: temporal artery.</div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="ln"></div><div class="ln"></div><div class="ln s"></div>
-                  <div class="sec">PET and the steroid window</div>
-                  <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div>
-                  <div class="sec">Differential</div>
-                  <div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln s"></div>
-                  <div class="refs"><b>References</b><br>1. Dejaco C, Ramiro S, Duftner C, et al. <i>Ann Rheum Dis</i>. 2018;77(5):636-643.<br>2. Schmidt WA. <i>Rheumatology (Oxford)</i>. 2018;57(suppl 2):ii22-ii31.</div>
-                </div>
-              </div>
-              <div class="rf">1</div>
-            </div>
-          </div>
-        </figure>
-        <ul class="points" role="list">
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Typeset</b> — running header, title, tags, a two-column body with a drop cap, figures in a framed two-up grid with annotations drawn on and listed, and references.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Add to Section</b> — on the Mac, right-click an image and choose Add to Section to print it right after the section it belongs to, instead of with the figures at the end. PDFs exported on any device keep the placement.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span><b>Fill in the Blank</b> — hidden phrases become numbered blanks, with an answer key, or without one for handing out.</span></li>
-          <li><span class="k" aria-hidden="true">&mdash;</span><span>Save or share the PDF from Mac, iPhone or iPad.</span></li>
-        </ul>
       </div>
     </div>
   </section>
@@ -1098,94 +916,16 @@
   </section>
 </div>
 
-<!-- ================= PLATFORMS ================= -->
-<section id="platforms" class="section band" aria-labelledby="plat-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="overline">One casebook, three screens</p>
-      <h2 id="plat-title">Write the long answer at the desk. Capture, record and review anywhere.</h2>
-      <p>Your casebook syncs through your own iCloud. The Synthesis Note — sections, citations, Hide for study — is written on the Mac; almost everything else works on all three.</p>
-    </div>
-
-    <div class="split">
-      <div class="plat">
-        <p class="overline rust">Mac &middot; macOS 26.3+</p>
-        <h3>The writing desk</h3>
-        <p class="role">Where a topic becomes an answer you'd be happy to hand a colleague.</p>
-        <ul role="list">
-          <li><span class="k">01</span><span>Write the Synthesis Note: sections, formatting, highlights, citations, topic links and Hide for study</span></li>
-          <li><span class="k">02</span><span>Annotate images, and Save Annotated Image…</span></li>
-          <li><span class="k">03</span><span>Related Lectures: link the Keynote, PowerPoint or PDF deck you built for a topic, and open it in one click. The file stays where it is: only its name and location sync with your casebook</span></li>
-          <li><span class="k">04</span><span>Record from the microphone or System Audio, with an option to save transcripts to a folder</span></li>
-          <li><span class="k">05</span><span>The A&ndash;Z Topics index, with ⌘K search and tag filters</span></li>
-          <li><span class="k">06</span><span>Resizes for Split View and narrow windows</span></li>
-          <li><span class="k">07</span><span>Sticky Notes, Study, Follow Ups, Repository, Dashboard, Trash and PDF export</span></li>
-        </ul>
-      </div>
-
-      <div class="plat">
-        <p class="overline rust">iPhone &middot; iOS 26.4+</p>
-        <h3>The pocket copy</h3>
-        <p class="role">For the moment the question comes up, and the minutes between cases.</p>
-        <ul role="list">
-          <li><span class="k">01</span><span>Capture a topic, typed or dictated</span></li>
-          <li><span class="k">02</span><span>Create, edit, color and file Sticky Notes</span></li>
-          <li><span class="k">03</span><span>Record a lecture into a note, even with the phone locked</span></li>
-          <li><span class="k">04</span><span>Read a topic section by section; it remembers where you stopped</span></li>
-          <li><span class="k">05</span><span>Quiz yourself with Study Mode cards and Study flashcards</span></li>
-          <li><span class="k">06</span><span>Set status, tags, sources and images; scan a book's ISBN barcode</span></li>
-          <li><span class="k">07</span><span>Follow Ups, Repository, PDF export, and the Dashboard under More</span></li>
-        </ul>
-      </div>
-
-      <div class="plat">
-        <p class="overline rust">iPad &middot; iPadOS 26.4+</p>
-        <h3>The bigger page</h3>
-        <p class="role">Everything the iPhone does, with room to spread out.</p>
-        <ul role="list">
-          <li><span class="k">01</span><span>Sticky Notes with the list beside the note</span></li>
-          <li><span class="k">02</span><span>Keyboard shortcuts: ⌘N new note, ⌥↑/⌥↓ to step through notes, ⌘⇧A attach, ⌘⇧N make a topic</span></li>
-          <li><span class="k">03</span><span>Recording on iPads with an A15, A16, A17&nbsp;Pro or M-series chip</span></li>
-          <li><span class="k">04</span><span>All orientations, and iPadOS multitasking with resizable windows</span></li>
-          <li><span class="k">05</span><span>A compact Dashboard layout for narrow windows</span></li>
-          <li><span class="k">06</span><span>Study, Follow Ups, Repository, PDF export and ISBN scanning</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="callout"><b>Notes are written on the Mac.</b> On iPhone and iPad a topic's Synthesis Note opens as a reader (&ldquo;Read-only &middot; edit on Mac&rdquo;), while status, tags, sources and images stay editable — and Sticky Notes are fully editable everywhere.</p>
-  </div>
-</section>
-
 <!-- ================= PRIVACY ================= -->
 <section class="section privacy-band" aria-labelledby="priv-title">
   <div class="wrap">
-    <p class="overline">Private by design</p>
-    <h2 id="priv-title">We run no servers, so there's nothing for us to leak</h2>
+    <p class="overline" id="priv-title">Private by design</p>
     <p>Medical Casebook has no accounts, no analytics and no developer servers. Your casebook lives on your devices and syncs through your own private iCloud database, which the developer cannot access. Recordings are transcribed on your device, and the audio is never saved.</p>
     <p>The app goes online only for iCloud sync, the source lookups you ask for, downloading the speech model if you turn on Recording, and Apple's speech recognition when you dictate a topic in Capture on a device that can't recognize speech on its own.</p>
     <ul class="marks" role="list">
       <li>No accounts</li><li>No analytics</li><li>No developer servers</li><li>On-device transcription</li><li>Your iCloud only</li>
     </ul>
     <p style="margin-top:24px"><a href="privacy.html">Read the privacy policy</a></p>
-  </div>
-</section>
-
-<!-- ================= REQUIREMENTS ================= -->
-<section id="requirements" class="section band" aria-labelledby="req-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="overline">Requirements</p>
-      <h2 id="req-title">What you need</h2>
-    </div>
-    <dl class="req">
-      <div><dt>Mac</dt><dd>macOS 26.3 or later. A native Mac app.</dd></div>
-      <div><dt>iPhone &amp; iPad</dt><dd>iOS or iPadOS 26.4 or later.</dd></div>
-      <div><dt>App version</dt><dd>Version 2.9 or later for everything on this page.</dd></div>
-      <div><dt>Sync</dt><dd>Optional. Sign in to iCloud to sync between devices. No app account.</dd></div>
-      <div><dt>Recording</dt><dd>Transcribes English speech. On iPhone and iPad: an iPhone with an A15 chip or newer (iPhone 13 or later, or iPhone SE 3rd generation), or an iPad with an A15, A16, A17&nbsp;Pro or M-series chip; older devices aren't supported. On the Mac, Apple silicon is recommended.</dd></div>
-      <div><dt>Speech model</dt><dd>About 630&nbsp;MB, downloaded when you turn Recording on. On iPhone and iPad you need about 1&nbsp;GB free (the download plus room for the system to prepare the model), and Wi-Fi is recommended. Remove it any time to free the space.</dd></div>
-      <div><dt>Network</dt><dd>Only for iCloud sync, source lookups you ask for, the model download, and Apple's speech recognition for Capture dictation when your device can't do it on its own. Your casebook itself is stored on your device.</dd></div>
-    </dl>
   </div>
 </section>
 
@@ -1198,9 +938,8 @@
     <p>Install Medical Casebook from the App Store on each Mac, iPhone and iPad you use, sign in to the same iCloud account, and your casebook follows you.</p>
     <div class="cta-row">
       <a class="pill filled lg" href="https://apps.apple.com/us/app/medical-casebook/id6764286169">Available on the App Store</a>
-      <a class="pill" href="support.html">Getting started &amp; FAQ</a>
+      <a class="pill" href="support.html">Support</a>
     </div>
-    <p class="callout" style="max-width:720px;margin:34px auto 0;text-align:left"><b>A study tool, not a medical record.</b> Medical Casebook is for what you learn from articles, textbooks and teaching. Please don't store information that could identify a patient. See the <a href="privacy.html#medical">privacy policy</a>.</p>
   </div>
 </section>
 
